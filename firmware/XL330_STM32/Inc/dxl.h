@@ -63,6 +63,8 @@ typedef struct {
 /* debug info about the last transaction */
 extern uint16_t dxl_dbg_rx_got;
 extern uint8_t  dxl_dbg_rx[16];
+/* 1 when the last status packet had the Hardware Error alert bit set (details: addr 70) */
+extern uint8_t  dxl_last_alert;
 
 void dxl_init(UART_HandleTypeDef *huart);
 int  dxl_ping(uint8_t id, uint16_t *model);

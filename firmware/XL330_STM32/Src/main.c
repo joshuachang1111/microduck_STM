@@ -36,6 +36,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include "dxl.h"
+#include "r_measure.h"   /* MOTOR_R_TEST compile switch */
 /* USER CODE END Includes */
 
 /* Private define ------------------------------------------------------------*/
@@ -647,6 +648,9 @@ int main(void)
   /* USER CODE BEGIN 2 */
   setvbuf(stdout, NULL, _IONBF, 0);       /* print immediately (prompt, echo) */
   dxl_init(&huart1);
+#if MOTOR_R_TEST
+  r_measure_run();                        /* R measurement console, never returns */
+#endif
   HAL_Delay(200);                         /* let the servo boot */
   printf("\r\n# XL330 test start (firmware v4, 2026-11-08)\r\n");
 

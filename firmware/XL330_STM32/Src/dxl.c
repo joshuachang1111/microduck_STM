@@ -16,6 +16,7 @@
 static UART_HandleTypeDef *dxl_huart;
 uint16_t dxl_dbg_rx_got = 0;      /* bytes received in the last transaction */
 uint8_t  dxl_dbg_rx[16];          /* first bytes of the last reply (debug) */
+uint8_t  dxl_last_alert = 0;      /* 1 = last status packet had the Hardware Error alert bit (bit 7) */
 static uint8_t txbuf[64];
 static uint8_t rxbuf[64];
 
@@ -100,6 +101,7 @@ static int dxl_txrx(uint8_t id, uint8_t inst, const uint8_t *params, uint16_t np
   /* flush any stale byte / overrun BEFORE transmitting, so the reply is never discarded */
   __HAL_UART_CLEAR_OREFLAG(dxl_huart);
   dxl_dbg_rx_got = 0;
+  dxl_last_alert = 0;
 
   /* transmit */
   HAL_HalfDuplex_EnableTransmitter(dxl_huart);
@@ -124,7 +126,8 @@ static int dxl_txrx(uint8_t id, uint8_t inst, const uint8_t *params, uint16_t np
   uint16_t rcrc = (uint16_t)(rxbuf[rlen - 2] | (rxbuf[rlen - 1] << 8));
   if (rcrc != dxl_crc(rxbuf, (uint16_t)(rlen - 2)))
     return DXL_ERR_CRC;
-  if (rxbuf[8] & 0x7F)                      /* bit7 = hardware alert, ignored here */
+  dxl_last_alert = (rxbuf[8] & 0x80) ? 1 : 0;   /* bit7 = hardware alert: details in addr 70 */
+  if (rxbuf[8] & 0x7F)
     return rxbuf[8] & 0x7F;
   if (rparams && nrp) memcpy(rparams, &rxbuf[9], nrp);
   return DXL_OK;
