@@ -1,0 +1,12 @@
+
+# XL330 test start
+# ping try 1: result=0 model=1200, rx bytes=14 : FF FF FD 00 01 07 00 55 00 B0 04 35 B7 54
+# cfg[boot] ReturnDelay=0(x2us) DriveMode=0 OperatingMode=1 TempLimit=70 MaxV=70 MinV=35 PWMLimit=885 CurrentLimit=1750 VelocityLimit=445 MaxPos=4095 MinPos=0
+# cfg[boot] VelI=1600 VelP=180 PosD=0 PosI=0 PosP=400 FF2=0 FF1=0 GoalPWM=885 GoalCurrent=1750 GoalVelocity=445 ProfileAcc=0 ProfileVel=0
+# commands (type then Enter):
+#   c 80    constant current  [mA]   (-300..300)
+#   p 90    fixed position    [deg]  (0..359, absolute, same angle as Wizard)
+#   v 12    constant velocity [rpm]  (negative = reverse)
+#   h       this help
+# or press USER button: preset experiments 1 -> 2 -> 3
+> ky  

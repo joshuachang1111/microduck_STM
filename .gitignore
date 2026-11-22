@@ -1,0 +1,8 @@
+# STM32CubeIDE build output and local files
+Debug/
+Release/
+*.launch
+.DS_Store
+# instructor documents (do not publish)
+experiments/guide pdf/
+experiments/docs/

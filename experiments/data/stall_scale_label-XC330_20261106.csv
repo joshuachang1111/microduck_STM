@@ -1,0 +1,11 @@
+motor,r_mm,pwm_pct,scale_g,notes
+label-XC330,40,10,216.0,
+label-XC330,40,20,377.6,
+label-XC330,40,30,543.6,
+label-XC330,40,40,697.7,
+label-XC330,40,50,788.7,
+label-XC330,40,60,891.2,
+label-XC330,40,70,970.0,
+label-XC330,40,80,1127.5,命令後 4.57 s 觸發 Overload (HW error 0x20)，讀秤在此之前
+label-XC330,40,90,1222.5,第二次 w 90 5（重新上電後）；命令後 2.73 s 觸發 Overload；第一次 w 90 因前一筆 Overload 扭力已關、無效
+label-XC330,40,100,1287.3,命令後 1.86 s 觸發 Overload，與讀秤時間接近，可信度較低

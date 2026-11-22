@@ -1,0 +1,11 @@
+position,f_Hz,V1_rms_mV,V2_rms_mV,phase12_deg,timebase,note
+1,999.846,43.0,91.5,31.7,500us,AFG 1Vpp (before averaging)
+1,1000.01,171,379,31.8,500us,AFG 4Vpp avg16
+1,999.987,171,379,33.0,200us,AFG 4Vpp avg16
+1,500.003,175,324,18.7,1ms,AFG 4Vpp avg16
+1,1999.99,170,530,47.0,200us,AFG 4Vpp avg16
+1,5000.07,156,922,60.6,100us,AFG 4Vpp avg16
+1,10000.1,135,1380,64.5,50us,AFG 4Vpp avg16
+1,20000.2,100,1870,63.4,20us,AFG 4Vpp avg16
+1,50000.7,49.0,2310,45.8,10us,AFG 4Vpp avg16
+1,100299,33.5,2380,-18.9,5us,AFG 4Vpp avg16; scope shows +18.9 (CH2 lags CH1 -> capacitive)
