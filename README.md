@@ -7,6 +7,7 @@ STM32 NUCLEO-F446RE drives the servo over DYNAMIXEL Protocol 2.0 and logs data t
 | Folder | Content |
 |---|---|
 | `firmware/XL330_STM32/` | STM32CubeIDE project (firmware v4). Open in STM32CubeIDE: File → Import → Existing Projects into Workspace |
+| `experiments/R_measure/` | Standalone STM32CubeIDE project for the stall test that measures equivalent resistance R (see its README) |
 | `experiments/` | Lab notes (`實驗紀錄_*.md`, `實驗結果總覽.md`), raw logs and summaries (`data/`), analysis scripts (`analysis/`), figures (`figures/`) |
 
 ## Wiring
